@@ -1,0 +1,249 @@
+[
+    {
+      "superior": {
+        "nome": "1T-1",
+        "fundo": "1T-5",
+        "frente": "-"
+      },
+      "inferior": {
+        "nome": "1B-1",
+        "fundo": "1B-5",
+        "frente": "-"
+      }
+    },
+    {
+      "superior": {
+        "nome": "2L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "3T-1",
+        "fundo": "3T-20",
+        "frente": "3T-15"
+      },
+      "inferior": {
+        "nome": "3B-1",
+        "fundo": "3B-10",
+        "frente": "3B-5"
+      }
+    },
+    {
+      "superior": {
+        "nome": "4L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "5T-1",
+        "fundo": "5T-35",
+        "frente": "5T-30"
+      },
+      "inferior": {
+        "nome": "5B-1",
+        "fundo": "5B-20",
+        "frente": "5B-15"
+      }
+    },
+    {
+      "superior": {
+        "nome": "6L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "7T-1",
+        "fundo": "7T-55",
+        "frente": "7T-50"
+      },
+      "inferior": {
+        "nome": "7B-1",
+        "fundo": "7B-30",
+        "frente": "7B-25"
+      }
+    },
+    {
+      "superior": {
+        "nome": "8L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "9T-1 / 9T-2 / 9T-3",
+        "fundo": "9T-55",
+        "frente": "9T-50"
+      },
+      "inferior": {
+        "nome": "9B-1",
+        "fundo": "9B-55",
+        "frente": "9B-50"
+      }
+    },
+    {
+      "superior": {
+        "nome": "10L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "11T-1 / 11T-2 / 11T-3",
+        "fundo": "11T-55",
+        "frente": "11T-50",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "11B-1",
+        "fundo": "11B-55",
+        "frente": "11B-50",
+        "centro": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "11a (SG)",
+        "fundo": "11a (SG)",
+        "frente": "",
+        "centro": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "11bT-1 /11bT-2 /11bT-3",
+        "fundo": "",
+        "frente": "",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "11bB-1",
+        "fundo": "",
+        "frente": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "12RS x3",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "13 (OV)",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "14T-1",
+        "fundo": "14T-20",
+        "frente": "14T-15",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "14B-1",
+        "fundo": "14B-20",
+        "frente": "14B-15",
+        "centro": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "15L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "16T-1",
+        "fundo": "16T-20",
+        "frente": "16T-15",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "16B-1",
+        "fundo": "16B-20",
+        "frente": "16B-15",
+        "centro": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "17L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "18T-1",
+        "fundo": "18T-20",
+        "frente": "18T-15",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "18B-1",
+        "fundo": "18B-20",
+        "frente": "18B-15",
+        "centro": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "19L",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "20T-1",
+        "fundo": "20T-20",
+        "frente": "20T-15",
+        "centro": ""
+      },
+      "inferior": {
+        "nome": "20B-1",
+        "fundo": "20B-20",
+        "frente": ""
+      }
+    },
+    {
+      "superior": {
+        "nome": "21 x4",
+        "fundo": "",
+        "frente": ""
+      },
+      "inferior": {}
+    },
+    {
+      "superior": {
+        "nome": "22A x2",
+        "fundo": "22B x2",
+        "frente": ""
+      },
+      "inferior": {}
+    }
+  ]
