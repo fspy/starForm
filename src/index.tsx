@@ -22,19 +22,22 @@ import Root from "./routes/Root";
 
 import data from "./data/itl50.json";
 
-const router = createBrowserRouter([
-  { path: "/", element: <Root /> },
-  {
-    path: "/montagem/:maquina/:bitola",
-    element: <Montagem />,
-    loader: ({ params }) => {
-      if (params.bitola) {
-        return data;
-      }
-      return "oops";
+const router = createBrowserRouter(
+  [
+    { path: "/", element: <Root /> },
+    {
+      path: "/montagem/:maquina/:bitola",
+      element: <Montagem />,
+      loader: ({ params }) => {
+        if (params.bitola) {
+          return data;
+        }
+        return "oops";
+      },
     },
-  },
-]);
+  ],
+  { basename: "/starForm" }
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

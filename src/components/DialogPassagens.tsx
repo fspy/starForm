@@ -1,13 +1,10 @@
 import {
-  Avatar,
   Dialog,
   DialogTitle,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemText,
 } from "@mui/material";
-import { blue } from "@mui/material/colors";
 import { Passagem } from "../global";
 
 interface DialogProps {
