@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Formadora {
+  id      Int      @id @default(autoincrement())
+  nome    String   @unique
+  bitolas Bitola[]
+}
+
+model Bitola {
+  id          Int        @id @default(autoincrement())
+  tamanho     Float
+  formadoraId Int
+  formadora   Formadora  @relation(fields: [formadoraId], references: [id])
+  passagens   Passagem[]
+}
+
+model Passagem {
+  id         Int         @id @default(autoincrement())
+  nome       String
+  lateralId  Int?
+  superiorId Int?
+  inferiorId Int?
+  entreRolos Float
+  bitolaId   Int?
+  bitola     Bitola?     @relation(fields: [bitolaId], references: [id])
+  inferior   Ferramenta? @relation("inferior", fields: [inferiorId], references: [id])
+  lateral    Ferramenta? @relation("lateral", fields: [lateralId], references: [id])
+  superior   Ferramenta? @relation("superior", fields: [superiorId], references: [id])
+}
+
+model Ferramenta {
+  id       Int        @id @default(autoincrement())
+  nome     String     @unique
+  fundo    String?
+  frente   String?
+  inferior Passagem[] @relation("inferior")
+  lateral  Passagem[] @relation("lateral")
+  superior Passagem[] @relation("superior")
+}
