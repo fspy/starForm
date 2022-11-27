@@ -6,10 +6,7 @@ builder.queryType({
     formadoras: t.prismaField({
       type: ["Formadora"],
       nullable: true,
-      resolve: async () =>
-        db.formadora.findMany({
-          include: { bitolas: true },
-        }),
+      resolve: async () => db.formadora.findMany(),
     }),
     passagens: t.prismaField({
       type: ["Passagem"],
