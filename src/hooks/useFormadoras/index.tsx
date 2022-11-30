@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import request from "graphql-request";
 import { graphql } from "../../graphql";
 
-const endpoint = "http://localhost:3000/api/graphql";
+const endpoint = "/api/graphql";
 
 const formadorasQuery = graphql(`
   query Formadoras {
