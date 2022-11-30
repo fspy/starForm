@@ -1,16 +1,21 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useFormContext } from "react-hook-form";
 import { Formadora } from "../components";
-import { Formadora as TFormadora } from "../graphql/graphql";
+import { Bitola } from "../components/Bitola";
+import { Bitola as TBitola, Formadora as TFormadora } from "../graphql/graphql";
 import { useFormadoras } from "../hooks";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const router = useRouter();
   const { data } = useFormadoras();
-  const { watch, register, handleSubmit } = useFormContext();
-  const formadoraId = watch("formadora");
+  const { watch, handleSubmit } = useFormContext();
 
-  const onSubmit = (data: any) => console.log(data);
+  const formadoraId = watch("formadora");
+  const bitolaId = watch("bitola");
+
+  const onSubmit = () => router.push(`/passagens/${bitolaId}`);
 
   return (
     <div className={styles.container}>
@@ -22,18 +27,11 @@ export default function Home() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Formadora data={data as TFormadora[]} />
         {formadoraId !== "-1" && (
-          <select {...register("bitola")}>
-            <option value="-1">Bitola</option>
-            {data
-              ?.find((f) => f.id === formadoraId)
-              ?.bitolas.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.tamanho.toFixed(2)} mm
-                </option>
-              ))}
-          </select>
+          <Bitola
+            data={data?.find((b) => b.id === formadoraId)?.bitolas as TBitola[]}
+          />
         )}
-        <input type="submit" />
+        <input type="submit" disabled={Number(bitolaId) < 1} />
       </form>
       <p>Formadora: {watch("formadora")}</p>
       <p>Bitola: {watch("bitola")}</p>

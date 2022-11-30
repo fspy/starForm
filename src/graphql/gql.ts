@@ -13,13 +13,18 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "\n        query Formadoras {\n          formadoras {\n            id\n            nome\n            bitolas {\n              id\n              tamanho\n            }\n          }\n        }\n      ": types.FormadorasDocument,
+    "\n  query Formadoras {\n    formadoras {\n      id\n      nome\n      bitolas {\n        id\n        tamanho\n      }\n    }\n  }\n": types.FormadorasDocument,
+    "\n  query passagensWithBitola($bitolaId: Int!) {\n    passagens(bitolaId: $bitolaId) {\n      id\n      nome\n      entreRolos\n      superior {\n        ...ferramenta\n      }\n      inferior {\n        ...ferramenta\n      }\n      lateral {\n        ...ferramenta\n      }\n    }\n  }\n\n  fragment ferramenta on Ferramenta {\n    id\n    nome\n    frente\n    fundo\n  }\n": types.PassagensWithBitolaDocument,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n        query Formadoras {\n          formadoras {\n            id\n            nome\n            bitolas {\n              id\n              tamanho\n            }\n          }\n        }\n      "): (typeof documents)["\n        query Formadoras {\n          formadoras {\n            id\n            nome\n            bitolas {\n              id\n              tamanho\n            }\n          }\n        }\n      "];
+export function graphql(source: "\n  query Formadoras {\n    formadoras {\n      id\n      nome\n      bitolas {\n        id\n        tamanho\n      }\n    }\n  }\n"): (typeof documents)["\n  query Formadoras {\n    formadoras {\n      id\n      nome\n      bitolas {\n        id\n        tamanho\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query passagensWithBitola($bitolaId: Int!) {\n    passagens(bitolaId: $bitolaId) {\n      id\n      nome\n      entreRolos\n      superior {\n        ...ferramenta\n      }\n      inferior {\n        ...ferramenta\n      }\n      lateral {\n        ...ferramenta\n      }\n    }\n  }\n\n  fragment ferramenta on Ferramenta {\n    id\n    nome\n    frente\n    fundo\n  }\n"): (typeof documents)["\n  query passagensWithBitola($bitolaId: Int!) {\n    passagens(bitolaId: $bitolaId) {\n      id\n      nome\n      entreRolos\n      superior {\n        ...ferramenta\n      }\n      inferior {\n        ...ferramenta\n      }\n      lateral {\n        ...ferramenta\n      }\n    }\n  }\n\n  fragment ferramenta on Ferramenta {\n    id\n    nome\n    frente\n    fundo\n  }\n"];
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.

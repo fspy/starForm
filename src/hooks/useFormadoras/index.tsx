@@ -4,25 +4,26 @@ import { graphql } from "../../graphql";
 
 const endpoint = "http://localhost:3000/api/graphql";
 
-function useFormadoras() {
-  return useQuery(["formadoras"], async () => {
-    const { formadoras } = await request(
-      endpoint,
-      graphql(`
-        query Formadoras {
-          formadoras {
-            id
-            nome
-            bitolas {
-              id
-              tamanho
-            }
-          }
-        }
-      `)
-    );
-    return formadoras;
-  });
+const formadorasQuery = graphql(`
+  query Formadoras {
+    formadoras {
+      id
+      nome
+      bitolas {
+        id
+        tamanho
+      }
+    }
+  }
+`);
+
+async function fetchFormadoras() {
+  const { formadoras } = await request(endpoint, formadorasQuery);
+  return formadoras;
 }
 
-export { useFormadoras };
+function useFormadoras() {
+  return useQuery(["formadoras"], () => fetchFormadoras());
+}
+
+export { useFormadoras, fetchFormadoras };

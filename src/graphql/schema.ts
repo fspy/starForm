@@ -15,7 +15,7 @@ builder.queryType({
         db.passagem.findMany({
           ...query,
           where: { bitolaId: args.bitolaId },
-          orderBy: { nome: "asc" },
+          orderBy: { id: "desc" },
         }),
     }),
   }),

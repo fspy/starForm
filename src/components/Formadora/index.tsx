@@ -7,7 +7,7 @@ export function Formadora({ data: formadoras }: { data: TFormadora[] }) {
     <select {...register("formadora")}>
       <option value="-1">Formadora</option>
       {formadoras?.map((f) => (
-        <option key={f.id} value={f.id}>
+        <option key={`formadora-${f.id}`} value={f.id}>
           {f.nome}
         </option>
       ))}

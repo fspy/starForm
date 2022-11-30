@@ -63,5 +63,24 @@ export type FormadorasQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type FormadorasQuery = { __typename?: 'Query', formadoras?: Array<{ __typename?: 'Formadora', id: string, nome: string, bitolas: Array<{ __typename?: 'Bitola', id: string, tamanho: number }> }> | null };
 
+export type PassagensWithBitolaQueryVariables = Exact<{
+  bitolaId: Scalars['Int'];
+}>;
 
+
+export type PassagensWithBitolaQuery = { __typename?: 'Query', passagens: Array<{ __typename?: 'Passagem', id: string, nome: string, entreRolos: number, superior?: (
+      { __typename?: 'Ferramenta' }
+      & { ' $fragmentRefs'?: { 'FerramentaFragment': FerramentaFragment } }
+    ) | null, inferior?: (
+      { __typename?: 'Ferramenta' }
+      & { ' $fragmentRefs'?: { 'FerramentaFragment': FerramentaFragment } }
+    ) | null, lateral?: (
+      { __typename?: 'Ferramenta' }
+      & { ' $fragmentRefs'?: { 'FerramentaFragment': FerramentaFragment } }
+    ) | null }> };
+
+export type FerramentaFragment = { __typename?: 'Ferramenta', id: string, nome: string, frente?: string | null, fundo?: string | null } & { ' $fragmentName'?: 'FerramentaFragment' };
+
+export const FerramentaFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ferramenta"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Ferramenta"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"nome"}},{"kind":"Field","name":{"kind":"Name","value":"frente"}},{"kind":"Field","name":{"kind":"Name","value":"fundo"}}]}}]} as unknown as DocumentNode<FerramentaFragment, unknown>;
 export const FormadorasDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Formadoras"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"formadoras"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"nome"}},{"kind":"Field","name":{"kind":"Name","value":"bitolas"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"tamanho"}}]}}]}}]}}]} as unknown as DocumentNode<FormadorasQuery, FormadorasQueryVariables>;
+export const PassagensWithBitolaDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"passagensWithBitola"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"bitolaId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"passagens"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"bitolaId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"bitolaId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"nome"}},{"kind":"Field","name":{"kind":"Name","value":"entreRolos"}},{"kind":"Field","name":{"kind":"Name","value":"superior"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ferramenta"}}]}},{"kind":"Field","name":{"kind":"Name","value":"inferior"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ferramenta"}}]}},{"kind":"Field","name":{"kind":"Name","value":"lateral"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ferramenta"}}]}}]}}]}},...FerramentaFragmentDoc.definitions]} as unknown as DocumentNode<PassagensWithBitolaQuery, PassagensWithBitolaQueryVariables>;
